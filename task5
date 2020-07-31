@@ -1,0 +1,12 @@
+def most_frequent(s):
+    s = sorted(s.lower())
+    s = list(s)
+    dict = {}
+    for i in s:
+        dict[i] = s.count(i)
+    for k, v in sorted(dict.items(), key=lambda x:x[1], reverse=True):
+        if len(str(v)) == 1:
+            v = '0' + str(v)
+        print(k, ' = ', v)
+s = input("Enter a string\n")
+most_frequent(s)
